@@ -1,0 +1,12 @@
+{
+    "CoreBluetooth.framework": 2,
+    "ImageIO.framework": 1,
+    "CoreLocation.framework": 1,
+    "AVFoundation.framework": 1,
+    "HealthKit.framework": 1,
+    "Security.framework": 2,
+    "SystemConfiguration.framework": 1,
+    "LocalAuthentication.framework": 1,
+    "AudioToolbox.framework": 1,
+    "UserNotifications.framework": 1
+}

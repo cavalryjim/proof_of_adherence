@@ -1,0 +1,39 @@
+  <%= form_for(patient, html: {"data-abide" => ''}) do |f| %>
+  
+    <div class="row">
+      <div class="large-4 columns">
+        <%= f.label :active, 'active'%>
+        <%= f.text_field :active %>
+      </div>
+      <div class="large-4 columns">
+        <%= f.label :email, 'email'%>
+        <%= f.text_field :email, placeholder: "Email", required: true %>
+      </div>
+      <div class="large-4 columns">
+        <%= f.label :registration_code, 'reg code'%>
+        <%= f.text_field :registration_code, disabled: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.label :validic_id, 'validic id'%>
+        <%= f.text_field :validic_id, disabled: true %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.label :validic_token, 'validic token'%>
+        <%= f.text_field :validic_token, disabled: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.label :auth_token, 'auth token'%>
+        <%= f.text_field :auth_token, disabled: true %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.label :device_uuid, 'device uuid'%>
+        <%= f.text_field :device_uuid, disabled: true %>
+      </div>
+    </div>
+    <%= f.hidden_field :active, :value => true %>
+  	<%= f.submit 'save', class: "button small hybridapp_save" %>
+  <% end %>

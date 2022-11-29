@@ -1,0 +1,102 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onNewDevice()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  
+    <ion-title>Devices</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-slides pager (ionSlideDidChange)="chartSlideChanged()">
+    <ion-slide > 
+      <ion-card>
+        <ion-card-header>
+          Weight
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #weightCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide > 
+      <ion-card>
+        <ion-card-header>
+          Activity
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #activityCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide> 
+      <ion-card>
+        <ion-card-header>
+          Blood Pressure
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #bpCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide> 
+      <ion-card>
+        <ion-card-header>
+          Glucose
+        </ion-card-header>
+        <ion-card-content>
+          Coming soon!
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide> 
+      <ion-card>
+        <ion-card-header>
+          Medicine
+        </ion-card-header>
+        <ion-card-content>
+          Coming soon!
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  
+  <ion-list >
+    <button ion-item [ngClass]="{ 'active': currentSlideIndex == 0 }" >
+      <ion-icon name="body"></ion-icon>
+      Weight Scale
+    </button>
+    <button ion-item [ngClass]="{ 'active': currentSlideIndex == 1 }">
+      <ion-icon name="walk"></ion-icon>
+      Activity Tracker
+    </button>
+    <button ion-item [ngClass]="{ 'active': currentSlideIndex == 2 }">
+      <ion-icon name="heart"></ion-icon>
+      Blood Pressure Monitor
+    </button>
+    <button ion-item [ngClass]="{ 'active': currentSlideIndex == 3 }">
+      <ion-icon name="alert"></ion-icon>
+      Blood Glucose Monitor
+    </button>
+    <button ion-item [ngClass]="{ 'active': currentSlideIndex == 4 }">
+      <ion-icon name="beaker"></ion-icon>
+      Pill Dispenser
+    </button>
+  </ion-list>
+</ion-content>

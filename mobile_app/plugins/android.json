@@ -1,0 +1,79 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-android-support-v4": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-autostart": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-ble-central": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-fullscreen": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-health": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-http": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-touch-id": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-velda-devicefeedback": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "de.appplant.cordova.plugin.local-notification": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-bluetooth-serial": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "com.validic.mobile": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-app-event": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    }
+  }
+}

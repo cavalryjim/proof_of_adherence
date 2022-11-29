@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Close</button>
+    </ion-buttons>
+    <ion-title class="center">
+      <img alt="logo" height="30"  src="assets/images/health_engagements_logo_icon_horizontal.png" >
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h4 text-uppercase class="center">System Info</h4>
+  
+  <ion-list>
+    <ion-list-header>Your Device</ion-list-header>
+    <ion-item>Manufacturer: {{ device_manufacturer }}</ion-item>
+    <ion-item>Model: {{ device_model }}</ion-item>
+    <ion-item>Platform: {{ device_platform }} {{ device_version }}</ion-item>
+    <ion-item>Device ID: {{ device_uuid }}</ion-item>
+  </ion-list>
+  
+  <ion-list>
+    <ion-list-header>This App</ion-list-header>
+    <ion-item>Name: {{ app_name }}</ion-item>
+    <ion-item>Version: {{ app_version}}</ion-item>
+  </ion-list>
+  
+  <ion-list>
+    <ion-list-header>Temp Testing Info</ion-list-header>
+    <ion-item>Validic ID: {{ validic_id }}</ion-item>
+    <ion-item>Validic Token: {{ validic_token }}</ion-item>
+    <ion-item>Auth Token: {{ auth_token }}</ion-item>
+    <ion-item>HE ID: {{ he_id }}</ion-item>
+    <ion-item>Registration Code: {{ reg_code }}</ion-item>
+    <ion-item>App UUID: {{ app_uuid }}</ion-item>
+  </ion-list>
+  <!-- <h6>Your Device</h6>
+  <p>Manufacturer: {{ device_manufacturer }}</p>
+  <p>Model: {{ device_model }}</p>
+  <p>Platform: {{ device_platform }} {{ device_version }}</p>
+  <p>Device ID: {{ device_uuid }} </p> -->
+  
+  <!-- <hr>
+  <h6>This App</h6>
+  <p>Name: {{ app_name }} </p>
+  <p>Version: {{ app_version}} </p> -->
+  
+  <!-- <hr>
+  <h6>Temp Testing Info</h6>
+  <p>Validic ID: {{ validic_id }} </p>
+  <p>Validic Token: {{ validic_token }} </p>
+  <p>Auth Token: {{ auth_token }} </p>
+  <p>HE ID: {{ he_id }} </p>
+  <p>Registration Code: {{ reg_code }} </p>
+  <p>App UUID: {{ app_uuid }} <p> -->
+  <ion-row>
+    <ion-col col-6 class="center">
+      <button ion-button (click)="confirm_logout()">Logout </button>
+    </ion-col>
+    
+    <ion-col col-6 class="center">
+      <button ion-button (click)="populate_test_data()">Test Data </button>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row>
+    <ion-col col-6 class="center">
+      <button ion-button (click)="fetchDevices()">Update Devices </button>
+    </ion-col>
+    
+    <ion-col col-6 class="center">
+      <button ion-button (click)="post_readings()">Post Readings </button>
+    </ion-col>
+    
+  </ion-row>
+  
+</ion-content>
+

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title >
+      <img alt="logo" height="30"  src="assets/images/health_engagements_logo_icon_horizontal.png" >
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h3 class="center">{{ title }}</h3>
+  <h6 class="center">{{ model }}</h6>
+  
+  <ion-card>
+    <ion-card-content >
+      <canvas #weightCanvas [hidden]="!(peripheral_type=='weight')"></canvas>
+      <canvas #bpCanvas [hidden]="!(peripheral_type=='blood_pressure')" ></canvas>
+      <canvas #pulseOxCanvas [hidden]="!(peripheral_type=='pulse_oximeter')"></canvas>
+      <canvas #temperatureCanvas [hidden]="!(peripheral_type=='thermometer')"></canvas>
+    </ion-card-content>
+  </ion-card> 
+  <ion-row padding>
+    <ion-col col-6 text-uppercase class="center reading_th_label">{{ reading_label }}</ion-col>
+    <ion-col col-6 text-uppercase class="center reading_th_date">Date</ion-col>
+  </ion-row>
+  <ion-row *ngFor="let reading of readings | reverse">
+    <ion-col col-6 class="reading_col center"> 
+      <span *ngIf="peripheral_type=='blood_pressure'">
+        {{ reading.value1 }} / {{ reading.value2 }}
+      </span>
+      <span *ngIf="peripheral_type=='weight'">
+        {{ reading.value1 }}
+      </span>
+      <span *ngIf="peripheral_type=='pulse_oximeter'">
+        {{ reading.value1 }}
+      </span>
+      <span *ngIf="peripheral_type=='thermometer'">
+        {{ reading.value1 }}
+      </span>
+    </ion-col>
+    
+    <ion-col col-6 class="date_col center"> 
+      {{ reading.date | date: 'shortDate' }}
+    </ion-col>
+    
+  </ion-row>
+  <!-- <ion-list>
+    <ion-list-header>
+      <ion-row>
+        <ion-col col-6 text-uppercase class="center reading_th_label">{{ reading_label }}</ion-col>
+        <ion-col col-6 text-uppercase class="center reading_th_date">Date</ion-col>
+      </ion-row>
+    </ion-list-header>
+    <ion-item *ngFor="let reading of readings | reverse">
+
+          <span *ngIf="peripheral_type=='blood_pressure'">
+            {{ reading.value1 }} / {{ reading.value2 }}
+          </span>
+          <span *ngIf="peripheral_type=='weight'">
+            {{ reading.value1 }}
+          </span>
+
+      <ion-note item-end>{{ reading.date | date: 'shortDate' }}</ion-note>
+    </ion-item>
+  </ion-list> -->
+</ion-content>

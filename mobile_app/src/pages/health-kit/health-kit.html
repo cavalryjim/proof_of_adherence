@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Health Kit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>steps</ion-list-header>
+    <ion-item *ngFor="let reading of step_collection " >
+      {{ reading.value }}
+    <ion-note item-end> {{ reading.endDate | date: "MM/dd/yyyy" }} </ion-note>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,156 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// #BCE194 -> light green
+// #8BA6C1 -> light blue
+// #7D7D7D -> dark gray
+// #80C038 -> green
+// #579ADD -> blue
+
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url('../assets/fonts/nunito-sans.woff2') format("woff2");
+  //font-weight: 200;
+}
+
+ion-content {
+  font-family: "Nunito Sans" !important;
+  color: #7D7D7D;
+}
+
+ion-list-header {
+  color: #80C038 !important;
+}
+
+h1 {
+  color: #8BA6C1;
+  font-weight: 600;
+}
+
+h3 {
+  color: #8BA6C1;
+}
+
+h5 {
+  color: #7D7D7D;
+}
+
+h6 {
+  color: #7D7D7D;
+}
+
+.device_card {
+  background-color: #ECECED;
+}
+
+.device_header {
+  //font-family: "Nunito Sans Semi Bold";
+  font-size: 20px;
+  //font-weight: bold;
+  //text-align: center;
+  font-weight: 600;
+}
+
+.device_model {
+  font-size: 12px !important;
+}
+
+.device_last_reading {
+  font-size: 40px;
+  color: #579ADD;
+}
+
+.device_last_read_time {
+  color: #7D7D7D;
+}
+
+.footer {
+  color: #7D7D7D;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.light_green {
+  color: #BCE194 !important;
+}
+
+.light_blue {
+  color: #8BA6C1 !important;
+}
+
+.dark_gray {
+  color: #7D7D7D !important;
+}
+
+.green {
+  color: #80C038 !important;
+}
+
+.blue {
+  color: #579add !important;
+}
+
+.device_model {
+  font-size: 20px;
+}
+
+.more_icon {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.pair_button {
+  //background-color: blue !important;
+  font-size: 12px;
+  //padding: 1px 1px; 
+}
+
+.confirm_pair_button {
+  background-color: #80C038;
+}
+
+.pad_top_third_screen {
+  padding-top: 30%;
+}
+
+.walk_through_icon {
+  font-size: 85px;
+  color: #BCE194;
+}
+
+.walk_through_next {
+  font-size: 40px;
+}
+
+.vertical_align_content > *
+{
+  display: flex!important;
+  align-content: center!important;
+  align-items: center!important;
+}
+
+.behaviors-menu .popover-content {
+  width: 100%;
+}
+
+.padding_top_50 {
+  padding-top: 50px !important;
+}
+

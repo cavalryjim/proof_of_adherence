@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img alt="logo" height="30"  src="assets/images/health_engagements_logo_icon_horizontal.png" >
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h1 class="center padding_top_50">Let's Get Started...</h1>
+  <h5 class="center">Enter your registration code:</h5>
+  
+  <ion-row padding>
+    <ion-col col-12>
+      <form #f="ngForm" (ngSubmit)="onVerify(f)">
+        <ion-list>
+          <ion-item>
+            <ion-label stacked text-uppercase class="light_blue">Registration Code</ion-label>
+            <ion-input
+              type="text"
+              ngModel
+              name="registration_code"
+              text-uppercase
+              required></ion-input>
+          </ion-item>
+        </ion-list>
+        <button ion-button block type="submit" [disabled]="!f.valid">Submit</button>
+      </form>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row padding> 
+    <ion-col>
+      <p class="dark_gray">Need a registration code?  Contact james@healthengagements.com</p>
+    </ion-col>
+    
+  </ion-row>
+</ion-content>

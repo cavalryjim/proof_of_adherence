@@ -1,0 +1,37 @@
+<%= form_for [@patient, @patient_device] do |f| %>
+  
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :device_id %>
+      <%= f.collection_select :device_id, Device.all, :id, :full_name, {prompt:'select device'}, {class: "regular_select"} %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :serial_number %>
+      <%= f.text_field :serial_number, placeholder: "Serial Number" %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :mac_address %>
+      <%= f.text_field :mac_address, placeholder: "MAC Address" %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :active %>
+      <%= f.check_box :active, default: true %>
+    </div>
+  </div>
+  
+
+  <div class="row">
+    <div class="large-4 columns">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

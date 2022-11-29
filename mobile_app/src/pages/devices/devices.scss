@@ -1,0 +1,20 @@
+page-devices {
+  .scroll-content {
+    background-color: map-get($colors, light);
+  }
+
+  ion-card-header {
+    font-weight: bold;
+  }
+  
+  ion-slides {
+    height: 300px;
+  }
+  
+  .active {
+    //background-color: blue;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+}

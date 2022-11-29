@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="com.validic.mobile" version="1.6.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>Validic Mobile</name>
+    <js-module name="ValidicMobile" src="www/ValidicMobile.js">
+        <clobbers target="ValidicMobile"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="ValidicMobile">
+                <param name="android-package" value="com.validic.mobile.ValidicPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+        </config-file>
+
+        <source-file src="src/android/ValidicPlugin.java" target-dir="src/com/validic/mobile"/>
+        <source-file src="src/android/ValidicCordovaController.java" target-dir="src/com/validic/mobile"/>
+        <source-file src="src/android/ValidicCordovaSessionController.java" target-dir="src/com/validic/mobile"/>
+        <source-file src="src/android/ValidicCordovaOCRController.java" target-dir="src/com/validic/mobile"/>
+        <source-file src="src/android/ValidicCordovaBluetoothController.java" target-dir="src/com/validic/mobile"/>
+        <source-file src="src/android/ValidicCordovaSHealthController.java" target-dir="src/com/validic/mobile"/>
+        <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference"/>
+        <source-file src="lib/" target-dir="."/>
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="ValidicMobile">
+                <param name="ios-package" value="ValidicMobile"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <preference name="CAMERA_USAGE_DESCRIPTION" default="Get OCR readings" />
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>$CAMERA_USAGE_DESCRIPTION</string>
+        </config-file>
+        <preference name="HEALTH_SHARE_USAGE_DESCRIPTION" default="Get Health data" />
+        <config-file target="*-Info.plist" parent="NSHealthShareUsageDescription">
+            <string>$HEALTH_SHARE_USAGE_DESCRIPTION</string>
+        </config-file>
+        <preference name="HEALTH_UPDATE_USAGE_DESCRIPTION" default="Update Health data" />
+        <config-file target="*-Info.plist" parent="NSHealthUpdateUsageDescription">
+            <string>$HEALTH_UPDATE_USAGE_DESCRIPTION</string>
+        </config-file>
+        <preference name="BLUETOOTH_USAGE_DESCRIPTION" default="Get Bluetooth readings" />
+        <config-file target="*-Info.plist" parent="NSBluetoothPeripheralUsageDescription">
+            <string>$BLUETOOTH_USAGE_DESCRIPTION</string>
+        </config-file>
+        <header-file src="src/ios/ValidicMobile.h"/>
+        <source-file src="src/ios/ValidicMobile.m"/>
+        <header-file src="src/ios/ValidicMobile+BLE.h"/>
+        <source-file src="src/ios/ValidicMobile+BLE.m"/>
+        <header-file src="src/ios/ValidicMobile+HK.h"/>
+        <source-file src="src/ios/ValidicMobile+HK.m"/>
+        <header-file src="src/ios/ValidicMobile+OCR.h"/>
+        <source-file src="src/ios/ValidicMobile+OCR.m"/>
+        <header-file src="src/ios/ValidicMobile+Session.h"/>
+        <source-file src="src/ios/ValidicMobile+Session.m"/>
+    </platform>
+</plugin>

@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: devices
+#
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  vendor               :string
+#  vendor_number        :string
+#  cost                 :decimal(, )
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  validic_id           :integer
+#  manufacturer         :string
+#  model                :string
+#  pairing_instructions :text
+#  instructions         :text
+#  reading_instructions :text
+#  image_url            :string
+#  peripheral_type      :string
+#  device_sfid          :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  vendor: MyString
+  vendor_number: MyString
+  cost: 9.99
+
+two:
+  name: MyString
+  vendor: MyString
+  vendor_number: MyString
+  cost: 9.99

@@ -1,0 +1,41 @@
+repositories{
+    jcenter()
+    mavenCentral()
+    flatDir{
+        dirs 'lib'
+    }
+}
+dependencies {
+    compile(name:'validicmobile-ble', ext:'aar')
+    compile(name:'validicmobile-ocr', ext:'aar' )
+    compile(name:'validicmobile-shealth', ext: 'aar')
+    compile(name:'validicmobile-shared', ext: 'aar')
+    compile 'com.polidea.rxandroidble:rxandroidble:1.2.2'
+    compile 'com.google.code.gson:gson:2.6.2' 
+    compile 'com.koushikdutta.async:androidasync:2.1.7'
+    compile 'no.nordicsemi.android.support.v18:scanner:1.0.0'
+    // Only will be included if your application supports Samsung SHealth
+    compile fileTree(dir:'lib/', include:'*.jar')
+}
+
+configurations {
+   all*.exclude group: 'com.android.support', module: 'support-v4'
+   all*.exclude group: 'com.android.support', module: 'support-annotations'
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+ext.cdvMinSdkVersion = 19
+ext.buildToolsVersion = 25
+ext.postBuildExtras = {
+    android {
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_7
+            targetCompatibility JavaVersion.VERSION_1_7
+        }
+    }
+}

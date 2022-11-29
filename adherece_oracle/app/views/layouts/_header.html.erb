@@ -1,0 +1,29 @@
+<header id='header'>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">
+        <%= link_to_if(user_signed_in?, image_tag(s3_url("health_engagements_logo_sm.png")), root_path) %>
+      </li>
+    </ul>
+  </div>
+  
+   
+  <div class="top-bar-right">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <% if user_signed_in?  %>  
+        <li>
+          <a href="#"><%= current_user %></a>
+          <ul class="menu vertical">
+            <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+            <!-- <li class="line_break"><hr></li> -->
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      <% end %>
+      <!-- <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li> -->
+    </ul>
+  </div>
+</div>
+</header>

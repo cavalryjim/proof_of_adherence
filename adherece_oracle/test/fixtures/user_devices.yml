@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: user_devices
+#
+#  id            :integer          not null, primary key
+#  user_id       :integer
+#  device_id     :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  serial_number :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  device_id: 1
+
+two:
+  user_id: 1
+  device_id: 1

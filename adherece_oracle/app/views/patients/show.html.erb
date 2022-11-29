@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="columns large-12">
+    <h4><%= @patient.name %></h4>
+  </div>
+</div>
+
+<div class="row" >
+  <div class="large-12 columns" >
+    <table>
+      <thead>
+        <tr>
+          <th colspan="6">Reading</th>
+          
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @readings.each do |reading| %>
+          <tr>
+            <td><%= reading.peripheral_type %></td>
+            <td><%= reading.value1 %></td>
+            <td><%= reading.value2 %></td>
+            <td><%= reading.value3 %></td>
+            <td><%= link_to 'Edit', edit_patient_reading_path(@patient, reading) %></td>
+            <td><%= link_to 'Destroy', [@patient, reading], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'Edit', edit_patient_path(@patient) %> |
+    
+  </div>
+</div>
+
+

@@ -1,0 +1,36 @@
+<div class="row">    
+  <div class="large-12 columns">
+    
+    <h4><%= @user.name %></h4>
+  </div>
+</div>
+
+<div class="row" >
+  <div class="large-12 columns" >
+    <table>
+      <thead>
+        <tr>
+          <th>Device</th>
+          <th>Model</th>
+          <th>Serial #</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @devices.each do |device| %>
+          <tr>
+            <td><%= link_to device.name, edit_user_user_device_path(@user, device) %></td>
+            <td><%= device.vendor_number%></td>
+            <td><%= device.serial_number %></td>
+            <td><%= link_to 'Remove', user_user_device_path(@user, device), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'Add Device', new_user_user_device_path(@user) %>
+  </div>
+</div>

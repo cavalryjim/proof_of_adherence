@@ -1,0 +1,14 @@
+
+
+<p>
+  <strong>User:</strong>
+  <%= @patient_device.patient_id %>
+</p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @patient_device.device_id %>
+</p>
+
+<%= link_to 'Edit', edit_patient_device_path(@patient_device) %> |
+<%= link_to 'Back', patient_devices_path %>

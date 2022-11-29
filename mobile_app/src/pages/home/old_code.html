@@ -1,0 +1,193 @@
+<!-- <ion-content >
+  <div text-center>Last Sync: {{ last_sync }}</div>
+  <div><button ion-button (click)="validicService.supportedDevices()">Supported Devices</button></div>
+  <div><button ion-button (click)="validicService.pairDevice(14)">Pair</button></div>
+  <div><button ion-button (click)="readDevice(14)">Read</button></div>
+
+  <ion-list no-lines >
+    <button ion-item [navPush]="healthKitPage" *ngIf="health_available">
+      <ion-card>
+        <ion-card-header>Health Kit</ion-card-header>
+        <ion-row>
+          <ion-col offset-2 col-4>
+            <ion-img width="30" height="30" src="assets/images/ok-xxl.png"></ion-img>
+          </ion-col>
+          <ion-col col-6><strong>{{ steps }}</strong> steps</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col offset-2 col-4>
+            Paired
+          </ion-col>
+          <ion-col col-6>Yesterday</ion-col>
+        </ion-row>
+      </ion-card>
+    </button>
+    <button ion-item [navPush]="devicePage" [navParams]="{title: 'Blood Pressure: A&D UA-651'}">
+      <ion-card>
+        <ion-card-header>Blood Pressure: A&D UA-651</ion-card-header>
+        <ion-row>
+          <ion-col offset-2 col-4>
+            <ion-img width="30" height="30" src="assets/images/ok-xxl.png"></ion-img>
+          </ion-col>
+          <ion-col col-6><strong>180/70</strong></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col offset-2 col-4>
+            Paired
+          </ion-col>
+          <ion-col col-6>Last Read</ion-col>
+        </ion-row>
+      </ion-card>
+    </button>
+    <button ion-item [navPush]="devicePage" [navParams]="{title: 'Scale: A&D UC-352BLE'}">
+      <ion-card>
+        <ion-card-header>Scale: A&D UA-352</ion-card-header>
+        <ion-row>
+          <ion-col offset-2 col-4>
+            <ion-img width="30" height="30" src="assets/images/ok-xxl.png"></ion-img>
+          </ion-col>
+          <ion-col col-6><strong>145</strong> lbs</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col offset-2 col-4>
+            Paired
+          </ion-col>
+          <ion-col col-6>Last Read</ion-col>
+        </ion-row>
+      </ion-card>
+    </button>
+    <button ion-item [navPush]="devicePage" [navParams]="{title: 'Pulse Ox: Nonin 3230'}">
+      <ion-card>
+        <ion-card-header>Pulse Ox: Nonin 3230</ion-card-header>
+        <ion-row>
+          <ion-col offset-2 col-4>
+            <ion-img width="30" height="30" src="assets/images/ok-xxl.png"></ion-img>
+          </ion-col>
+          <ion-col col-6><strong>98</strong> %</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col offset-2 col-4>
+            Paired
+          </ion-col>
+          <ion-col col-6>Last Read</ion-col>
+        </ion-row>
+      </ion-card>
+    </button>
+  </ion-list>
+</ion-content> -->
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card *ngIf="health_available; else enable_health">
+          <ion-card-content text-left>
+            <ion-card-header>
+              Activity
+            </ion-card-header>
+            <ion-spinner name="dots" *ngIf="activity_spinner"></ion-spinner>
+            <span *ngIf="!activity_spinner">
+              Yesterday, you went {{ this.distance }} miles.<br>
+              Yesterday, you took {{ this.steps }} steps.<br>
+
+            </span>
+          </ion-card-content>
+        </ion-card>
+        <ng-template #enable_health>
+          <ion-card >
+            <ion-card-content text-left>
+              Enable your health info to see more.
+            </ion-card-content>
+          </ion-card>
+        </ng-template>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-card >
+          <ion-card-content text-center>
+            <ion-card-header>
+              Devices
+            </ion-card-header>
+            <button ion-button [navPush]="devicesPage" outline icon-left>
+              <ion-icon name="watch" ></ion-icon>
+              view
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card >
+          <ion-card-content text-center>
+            <ion-card-header>
+              Care Plan
+            </ion-card-header>
+            <button ion-button [navPush]="carePlanPage" outline icon-left>
+              <ion-icon name="clipboard"></ion-icon>
+              view
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-card >
+          <ion-card-content text-center>
+            <ion-card-header>
+              Care Team
+            </ion-card-header>
+            <button ion-button [navPush]="teamPage" outline icon-left>
+              <ion-icon name="people" ></ion-icon>
+              view
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card >
+          <ion-card-content text-center>
+            <ion-card-header>
+              Education
+            </ion-card-header>
+            <button ion-button [navPush]="educationPage" outline icon-left>
+              <ion-icon name="book"></ion-icon>
+              view
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-card >
+          <ion-card-content text-center>
+            <ion-card-header>
+              Behaviors
+            </ion-card-header>
+            <button ion-button [navPush]="behaviorsPage" outline icon-left>
+              <ion-icon name="person" ></ion-icon>
+              view
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card >
+          <ion-card-content text-center>
+            <ion-card-header>
+              Tasks
+            </ion-card-header>
+            <button ion-button [navPush]="tasksPage" outline icon-left>
+              <ion-icon name="checkbox" outline></ion-icon>
+              view
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid> -->

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Health Engagements" %></title>
+    <link rel="apple-touch-icon" href="https://s3.amazonaws.com/health-engagements/app_images/he.ico"/>
+    <link rel="shortcut icon" href="https://s3.amazonaws.com/health-engagements/app_images/he.ico" />
+    <%= stylesheet_link_tag    "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <section id="wrapper">
+      <%= render 'layouts/header' unless @no_header %>
+    
+      
+      <section id="content">
+        <%= yield %>
+      </section>
+      
+      <section>
+        <%= render 'layouts/footer' unless @no_footer %>	
+      </section>
+    </section>
+    
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <% flash.each do |name, msg| %>
+      <%= js add_gritter(flash[name], msg, time: 1000 ) if msg .is_a?(String) %>
+    <% end %>
+    <%= gflash %>
+  </body>
+</html>

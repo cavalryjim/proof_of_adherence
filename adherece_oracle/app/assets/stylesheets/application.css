@@ -1,0 +1,45 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ * #BCE194 -> light green
+ * #8BA6C1 -> light blue
+ * #7D7D7D -> dark gray
+ * #80C038 -> green
+ * #579ADD -> blue
+ *
+ *= require_tree .
+ *= require_self
+ *= require gritter
+ *= require foundation_and_overrides
+
+ */
+
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+  background-color: #FFF !important;
+  font-size: 12px !important;
+  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+}
+
+
+
+a:hover {
+  background-color: transparent !important;
+  opacity: 0.7;
+  color: #579ADD;
+}
+
+
+/* JDavis: this class is applied to several of the JS items to stop flashing unformatted content */
+.fouc {display: none;} 
+

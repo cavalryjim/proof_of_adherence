@@ -1,0 +1,33 @@
+<%= form_for([@patient, reading]) do |f| %>
+  
+  <div class="row">
+    <div class="large-4 columns">
+      <%= f.label :value1, 'value1'%>
+      <%= f.text_field :value1, required: true %>
+    </div>
+    <div class="large-4 columns">
+      <%= f.label :value2, 'value2'%>
+      <%= f.text_field :value2 %>
+    </div>
+    <div class="large-4 columns">
+      <%= f.label :value3, 'value3'%>
+      <%= f.text_field :value3 %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-4 columns">
+      <%= f.label :peripheral_type, 'peripheral_type'%>
+      <%= f.text_field :peripheral_type %>
+    </div>
+    <div class="large-4 columns">
+      <%= f.label :device_date, 'date'%>
+      <%= f.date_field :device_date %>
+    </div>
+   
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

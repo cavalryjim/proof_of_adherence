@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <ion-buttons start>
+      <button ion-button icon-only (click)="presentMenu($event)">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons> -->
+    <ion-title class="center">
+      <!-- <img alt="logo" height="30" src="assets/images/health_engagements_logo_icon_horizontal.png" (click)="presentMenu($event)"> -->
+      <img alt="logo" height="30" src="assets/images/health_engagements_logo_icon_horizontal.png" (click)="presentSystemPage()">
+    </ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)="presentNotifications($event)">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons> -->
+    <!-- <ion-buttons end>
+      <button (click)="readingsService.validicDidRead({peripheralID: 14, records:[{weight: 86.2}]})">Post</button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card *ngFor="let device of devices; let i = index" class="device_card">
+    <ion-card-header class="device_header center" text-uppercase>
+      {{ device.name }}<br>
+      <span class="device_model center">{{ device.manufacturer }} {{ device.model }}</span>
+    </ion-card-header>
+    <!-- <ion-card-content>
+      <p class="device_model center">{{ device.manufacturer }} {{ device.model }}</p>
+    </ion-card-content> -->
+    <ion-row justify-content-center>
+      <ion-col col-12 class="center device_last_reading">
+        {{ readingsService.lastReading(device.peripheral_type).reading }}
+        <span class="last_reading_suffix" *ngIf="!(readingsService.lastReading(device.peripheral_type).reading == 'n/a')">
+          {{ devicesService.deviceReadingLabel(device.peripheral_type) }}
+        </span>
+      </ion-col>
+    </ion-row>
+    
+    <hr width="50%" *ngIf="device.peripheral_type == 'blood_pressure'">
+    <ion-row justify-content-center *ngIf="device.peripheral_type == 'blood_pressure'">
+      <ion-col col-12 class="center device_last_reading2">
+        PULSE: 
+        {{ readingsService.lastReading(device.peripheral_type).reading2 }}
+      </ion-col>
+    </ion-row>
+    
+    <!--goes inside the button tag: *ngIf="!device.paired" -->
+    <ion-row justify-content-center>
+      <ion-col col-12 class="center" >
+        <button ion-button small icon-left round
+          class = "pair_button center"
+          (click)="pairDevice(device, i)" >
+          <ion-icon name="bluetooth" > </ion-icon>
+          Pair
+        </button>
+        
+        <button ion-button small icon-left round
+          class = "confirm_pair_button center"
+          (click)="confirmDevicePaired(device, i)" >
+          <ion-icon name="checkmark" > </ion-icon>
+          Paired
+        </button>
+        
+        
+        <!-- <ion-icon name="checkmark-circle-outline" class="checkmark_green" *ngIf="device.paired"></ion-icon>
+        <span *ngIf="device.paired">Paired</span> -->
+      </ion-col>
+    </ion-row>
+    
+    
+    <ion-row>
+      <ion-col col-12 text-uppercase class="device_last_read_time center">
+        <strong>last read:</strong>
+        {{ readingsService.lastReading(device.peripheral_type).date | date: 'short' }}
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col col-12 text-right>
+        <button ion-button clear small [navPush]="devicePage" [navParams]= device >
+          <ion-icon name="more" class="more_icon"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-row> 
+    <ion-col text-uppercase class="center footer"> 
+      <strong>Last sync:</strong> {{ appData.last_sync | date: 'short' }}
+    </ion-col>
+  </ion-row>
+</ion-footer>
+
+

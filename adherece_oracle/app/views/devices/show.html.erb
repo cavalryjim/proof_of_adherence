@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @device.name %>
+</p>
+
+<p>
+  <strong>Vendor:</strong>
+  <%= @device.vendor %>
+</p>
+
+<p>
+  <strong>Vendor number:</strong>
+  <%= @device.vendor_number %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @device.cost %>
+</p>
+
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<%= link_to 'Back', devices_path %>

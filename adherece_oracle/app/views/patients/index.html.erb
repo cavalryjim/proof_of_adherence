@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="columns large-12">
+    <h4>Patients</h4>
+  </div>
+</div>
+
+<div class="row" >
+  <div class="large-12 columns" >
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @patients.each do |patient| %>
+          <tr>
+            <td><%= link_to patient.email, patient %></td>
+            
+            <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+            <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Patient', new_patient_path %>
+  </div>
+</div>

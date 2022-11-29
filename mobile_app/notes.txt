@@ -1,0 +1,24 @@
+Add the Validic package
+> ionic cordova plugin remove com.validic.mobile
+> ionic cordova plugin add /Users/james/Health_Engagements/Validic_Cordova_Full_1.6.0/plugin --save --nofetch --variable CAMERA_USAGE_DESCRIPTION="Track food intake readings" --variable HEALTH_SHARE_USAGE_DESCRIPTION="Get Health data" --variable HEALTH_UPDATE_USAGE_DESCRIPTION="Update Health data" --variable BLUETOOTH_USAGE_DESCRIPTION="Obtain Bluetooth readings"
+
+Remove or add a platform
+> ionic cordova platform rm ios
+> ionic cordova platform add ios
+
+Run on a device
+> ionic cordova run ios --device
+
+Using Cordova iOS 4.5 or higher, might need to remove plugin "cordova-plugin-console".
+> ionic cordova plugin rm cordova-plugin-console
+
+ cordova plugin rm cordova-plugin-compat --force
+ cordova plugin add cordova-plugin-compat@1.2
+ 
+ cordova plugin add cordova-plugin-ios-bluetooth-permissions --variable BLUETOOTH_USAGE_DESCRIPTION="your usage message" --save
+
+Need to add this plugin cordova-custom-config plugin.
+Find it here: https://github.com/dpa99c/cordova-custom-config
+
+A&D_UA-651BLE_44B23E
+

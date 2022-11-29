@@ -1,0 +1,48 @@
+<%= form_for(device) do |f| %>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :peripheral_type %>
+      <%= f.select :peripheral_type, Device.peripheral_types %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :manufacturer %>
+      <%= f.text_field :manufacturer %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :model %>
+      <%= f.text_field :model %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :validic_id %>
+      <%= f.text_field :validic_id %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :cost %>
+      <%= f.text_field :cost %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

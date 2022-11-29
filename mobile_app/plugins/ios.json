@@ -1,0 +1,89 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-android-support-v4": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-autostart": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-ble-central": {
+      "BLUETOOTH_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-bluetooth-serial": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-fullscreen": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-health": {
+      "HEALTH_READ_PERMISSION": "HealthHE accesses your physical activity through your Health app",
+      "HEALTH_WRITE_PERMISSION": "HealthHE integrates with your Health app",
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-http": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-touch-id": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-velda-devicefeedback": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "de.appplant.cordova.plugin.local-notification": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "com.validic.mobile": {
+      "CAMERA_USAGE_DESCRIPTION": "Track food intake readings",
+      "HEALTH_SHARE_USAGE_DESCRIPTION": "Get Health data",
+      "HEALTH_UPDATE_USAGE_DESCRIPTION": "Update Health data",
+      "BLUETOOTH_USAGE_DESCRIPTION": "Obtain Bluetooth readings",
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-app-event": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.healthengagements.healthHE"
+    }
+  }
+}

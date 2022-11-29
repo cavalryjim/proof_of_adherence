@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: meals
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  body       :text
+#  patient_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyText
+  patient_id: 1
+
+two:
+  title: MyString
+  body: MyText
+  patient_id: 1

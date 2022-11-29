@@ -1,0 +1,47 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <!-- <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button> -->
+      <button ion-button (click)="dismiss()">Cancel</button>
+    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSignup(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input
+          type="email"
+          ngModel
+          name="email"
+          required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Password</ion-label>
+        <ion-input
+          type="password"
+          ngModel
+          name="password"
+          required
+          [minlength]="6"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Medical System</ion-label>
+          <ion-select ngModel name="system" required>
+            <ion-option value="br_general" >Baton Rouge General</ion-option>
+            <ion-option value="olol">OLOL Hospital</ion-option>
+            <ion-option value="oschner">Oschner</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-list>
+    <button ion-button block type="submit" [disabled]="!f.valid">Signup</button>
+  </form>
+</ion-content>

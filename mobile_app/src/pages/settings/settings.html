@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Close</button>
+    </ion-buttons>
+    <ion-title>
+      <img alt="logo" height="30"  src="assets/images/health_engagements_logo_icon_horizontal.png" >
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h3 class="center">Settings</h3>
+
+  <ion-list>
+    <ion-list-header>
+      Communication
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Push Notifications</ion-label>
+      <ion-toggle value="push" checked="true"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-toggle value="email" checked="true"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Text</ion-label>
+      <ion-toggle value="text" checked="false"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list>
+    <ion-list-header>
+      Authentication
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Use TouchID</ion-label>
+      <ion-toggle [(ngModel)]="use_touch_id" (ionChange)="setTouchID()"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
